@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CALCULATOR</title>
+    <style>
+        .button {
+            color: rgba(255, 255, 255, 0);
+            padding: 40px 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            transition-duration: 0.3s;
+            cursor: pointer;
+        }
+        .main-button {
+            background-color: pink;
+            color: red;
+            margin-right: 20px;
+            height: 4cm;
+            width: 12cm;
+            border-radius: 8px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            border: 2px;
+        }
+        .side-button {
+            background-color: green;
+            color: white;
+            margin-right: 0px;
+            height: 2cm;
+            width: 2cm;
+            border-radius: 20%;
+            transition: background-color 0.3s, transform 0.3s;
+            border: 2px solid #6c6c6d;
+        }
+        .side-button:hover {
+            background-color: #6a757f;
+            transform: scale(1.1);
+        }
+        .number-button {
+            background-color: orange;
+            color: black;
+            margin-right: 0px;
+            height: 2cm;
+            width: 2cm;
+            border-radius: 20%;
+            transition: background-color 0.3s, transform 0.3s;
+            border: 2px solid #e98b41;
+        }
+        .number-button:hover {
+            background-color: #ec971f;
+            transform: scale(1.1);
+        }
+        .flex-container {
+            width:12.5cm;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            padding: 7px;
+	    margin :auto;
+            border-radius: 5px;
+        }
+        .flex-item {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body align="center">
+    <div class="flex-container">
+        <button class="button main-button flex-item"><h2>0</h2></button>
+        <button class="button number-button flex-item">7</button>
+        <button class="button number-button flex-item">8</button>
+        <button class="button number-button flex-item">9</button>
+        <button class="button side-button flex-item">AC</button>
+        <button class="button number-button flex-item">4</button>
+        <button class="button number-button flex-item">5</button>
+        <button class="button number-button flex-item">6</button>
+	<button class="button side-button flex-item">÷</button>
+        <button class="button number-button flex-item">1</button>
+        <button class="button number-button flex-item">2</button>
+        <button class="button number-button flex-item">3</button>
+        <button class="button side-button flex-item">√</button>
+        <button class="button number-button flex-item">0</button>
+        <button class="button number-button flex-item">00</button>
+        <button class="button number-button flex-item">.</button>
+        <button class="button side-button flex-item">X</button>
+        <button class="button side-button flex-item">-</button>
+        <button class="button side-button flex-item">+</button>
+        <button class="button side-button flex-item">=</button>
+	<button class="button side-button flex-item">%</button>
+    </div>
+</body>
+</html>
