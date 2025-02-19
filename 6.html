@@ -1,97 +1,128 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>CALCULATOR</title>
+    <title>Calculator</title>
     <style>
-        .button {
-            color: rgba(255, 255, 255, 0);
-            padding: 40px 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 30px;
-            transition-duration: 0.3s;
-            cursor: pointer;
-        }
-        .main-button {
+        body, html {
+            height: 100%;
             background-color: pink;
-            color: red;
-            margin-right: 20px;
-            height: 4cm;
-            width: 12cm;
-            border-radius: 8px;
+            font-family: "Roboto Condensed";
+            font-size: 24px;
+        }
+
+        button {
+            border: 0;
+            color: #ecf0f1;
+            outline: 0;
+            transition: transform 0.1s ease;
+        }
+        button:active {
+            transform: translateY(5px);
+        }
+        .center {
+            height: 100%;
             display: flex;
-            justify-content: flex-end;
             align-items: center;
-            border: 2px;
-        }
-        .side-button {
-            background-color: green;
-            color: white;
-            margin-right: 0px;
-            height: 2cm;
-            width: 2cm;
-            border-radius: 20%;
-            transition: background-color 0.3s, transform 0.3s;
-            border: 2px solid #6c6c6d;
-        }
-        .side-button:hover {
-            background-color: #6a757f;
-            transform: scale(1.1);
-        }
-        .number-button {
-            background-color: orange;
-            color: black;
-            margin-right: 0px;
-            height: 2cm;
-            width: 2cm;
-            border-radius: 20%;
-            transition: background-color 0.3s, transform 0.3s;
-            border: 2px solid #e98b41;
-        }
-        .number-button:hover {
-            background-color: #ec971f;
-            transform: scale(1.1);
-        }
-        .flex-container {
-            width:12.5cm;
-            display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            background-color: black;
-            padding: 7px;
-	    margin :auto;
-            border-radius: 5px;
         }
-        .flex-item {
-            margin: 5px;
+        .calculator {
+            background-color: #130f40;
+            border-radius: 10px;
+            box-shadow: 0 8px #2c3e50;
+            height: 355px;
+            min-width: 390px;
+            width: 390px;
+        }
+
+        .top-bar {
+            display: flex;
+            width: 100%;
+        }
+        .top-bar button {
+            box-shadow: 0 4px 1px #c0392b;
+            background: #e74c3c;
+            border-radius: 10px;
+            color: #ecf0f1;
+            flex: 0.9;
+            font-size: 22px;
+            height: 48px;
+            line-height: 48px;
+            margin: 10px;
+        }
+        .top-bar div {
+            background: #130f40;
+            border-radius: 10px;
+            box-shadow: inset 0 4px 5px #3498db;
+            color: #ecf0f1;
+            flex: 4;
+            font-size: 28px;
+            height: 26px;
+            margin: 10px;
+            padding: 12px;
+            text-align: right;
+        }
+
+        .keys {
+            display: flex;
+            flex-flow: column wrap;
+            height: 290px;
+        }
+        .keys button {
+            box-shadow: 0 4px 1px #2c3e50;
+            background: #3498db;
+            border-radius: 10px;
+            height: 50px;
+            line-height: 48px;
+            margin: 9px;
+            width: 75px;
+        }
+        .keys button.op {
+            box-shadow: 0 4px 1px #c0392b;
+            background: #e74c3c;
+            color: #ecf0f1;
+            line-height: 45px;
+        }
+        .keys button.equals {
+            box-shadow: 0 4px 1px #16a085;
+            background: #1abc9c;
+            color: #ecf0f1;
         }
     </style>
 </head>
-<body align="center">
-    <div class="flex-container">
-        <button class="button main-button flex-item"><h2>0</h2></button>
-        <button class="button number-button flex-item">7</button>
-        <button class="button number-button flex-item">8</button>
-        <button class="button number-button flex-item">9</button>
-        <button class="button side-button flex-item">AC</button>
-        <button class="button number-button flex-item">4</button>
-        <button class="button number-button flex-item">5</button>
-        <button class="button number-button flex-item">6</button>
-	<button class="button side-button flex-item">÷</button>
-        <button class="button number-button flex-item">1</button>
-        <button class="button number-button flex-item">2</button>
-        <button class="button number-button flex-item">3</button>
-        <button class="button side-button flex-item">√</button>
-        <button class="button number-button flex-item">0</button>
-        <button class="button number-button flex-item">00</button>
-        <button class="button number-button flex-item">.</button>
-        <button class="button side-button flex-item">X</button>
-        <button class="button side-button flex-item">-</button>
-        <button class="button side-button flex-item">+</button>
-        <button class="button side-button flex-item">=</button>
-	<button class="button side-button flex-item">%</button>
+<body>
+    <h1 align="center" style= 'color:black'><u>Calculator</u></h1>
+    <div class="center">
+        <div class="calculator">
+            <div class="top-bar">
+		<div class="display"></div>
+                <button class="op clear">C</button>
+            </div>
+            <div class="keys">
+                <div class="row">
+                    <button class="num">7</button>
+                    <button class="num">8</button>
+                    <button class="num">9</button>
+                    <button class="op multiply">x</button>
+                </div>
+                <div class="row">
+                    <button class="num">4</button>
+                    <button class="num">5</button>
+                    <button class="num">6</button>
+                    <button class="op divide">/</button>
+                </div>
+                <div class="row">
+                    <button class="num">1</button>
+                    <button class="num">2</button>
+                    <button class="num">3</button>
+                    <button class="op add">+</button>
+                </div>
+                <div class="row">
+                    <button class="num">.</button>
+                    <button class="num">0</button>
+                    <button class="equals">=</button>
+                    <button class="op subtract">-</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
